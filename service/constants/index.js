@@ -1,4 +1,4 @@
 export const themeStorageKey = "theme";
 
-export const DARK = "DARK";
-export const LIGHT = "LIGHT";
+export const DARK = "dark";
+export const LIGHT = "light";
