@@ -9,7 +9,7 @@ export const getTheme = () => {
 
 export const setLightMode = () => {
   try {
-    localStorage.setItem(themeStorageKey, DARK);
+    localStorage.setItem(themeStorageKey, LIGHT);
     document.documentElement.classList.add(LIGHT);
   } catch (err) {
     console.error(err);
