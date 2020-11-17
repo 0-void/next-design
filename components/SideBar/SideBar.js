@@ -5,13 +5,11 @@ import Sun from "../Icons/Icon/sun";
 import SearchBar from "../SearchBar/SearchBar";
 
 const SideBar = () => {
-  const { toggleTheme, theme } = useTheme();
+  const { cssProperties, toggleTheme, theme } = useTheme();
+  const styles = cssProperties();
+
   return (
-    <aside
-      className={`sidebarContainer ${
-        theme === "light" ? "bg-white" : "bg-black"
-      }`}
-    >
+    <aside className={`sidebarContainer ${styles.background}`}>
       <div className="flex justify-between items-center">
         <svg width="43" viewBox="0 0 114 100" fill="none">
           <g fill={`${theme === "light" ? "black" : "white"}`}>
@@ -22,9 +20,7 @@ const SideBar = () => {
           </g>
         </svg>
         <button
-          className={`rounded-lg flex items-center justify-end focus:outline-none ${
-            theme === "light" ? "bg-gray-200" : "bg-black"
-          }`}
+          className={`rounded-lg flex items-center justify-end focus:outline-none ${styles.background}`}
           onClick={() => toggleTheme()}
         >
           {theme === "light" ? (

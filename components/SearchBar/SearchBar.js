@@ -1,12 +1,12 @@
 import useTheme from "../../lib/Hooks/useTheme";
 
 const SearchBar = () => {
-  const { theme } = useTheme();
+  const { cssProperties, theme } = useTheme();
+  const styles = cssProperties();
 
   return (
     <div
-      className={`container ${
-        theme === "light" ? "bg-white" : "bg-black lightBorder"
+      className={`container ${styles.background} lightBorder"
       }`}
     >
       <span className="px-3 search">
@@ -28,10 +28,7 @@ const SearchBar = () => {
         placeholder="Search..."
         type="text"
         title="Search..."
-        className={`input ${
-          theme === "light" ? "text-gray-600" : "text-gray-300"
-        }`}
-        // value=""
+        className={`input ${styles.textColor}`}
       />
       <style jsx>{`
         .container {

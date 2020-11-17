@@ -2,12 +2,12 @@ import useTheme from "../../lib/Hooks/useTheme";
 import SideBar from "../SideBar/SideBar";
 
 const Page = ({ children }) => {
-  const { theme } = useTheme();
+  const { cssProperties } = useTheme();
+  const styles = cssProperties();
+
   return (
-    <div className={`${theme === "light" ? "bg-white" : "bg-black"}`}>
-      <div
-        className={`pageContainer`}
-      >
+    <div className={`${styles.background}`}>
+      <div className={`pageContainer`}>
         <SideBar />
         <main>{children}</main>
         <style jsx>{`
