@@ -1,16 +1,16 @@
-import { themeStorageKey } from "../constants/index";
+import { LIGHT, DARK, themeStorageKey } from "../constants/index";
 
 const isServer = typeof window === "undefined";
 
 export const getTheme = () => {
-  if (isServer) return "dark";
-  return localStorage.getItem(themeStorageKey) || "dark";
+  if (isServer) return DARK;
+  return localStorage.getItem(themeStorageKey) || DARK;
 };
 
 export const setLightMode = () => {
   try {
-    localStorage.setItem(themeStorageKey, "light");
-    document.documentElement.classList.add("light");
+    localStorage.setItem(themeStorageKey, DARK);
+    document.documentElement.classList.add(LIGHT);
   } catch (err) {
     console.error(err);
   }
@@ -18,8 +18,8 @@ export const setLightMode = () => {
 
 export const setDarkMode = () => {
   try {
-    localStorage.setItem(themeStorageKey, "dark");
-    document.documentElement.classList.remove("light");
+    localStorage.setItem(themeStorageKey, DARK);
+    document.documentElement.classList.remove(LIGHT);
   } catch (err) {
     console.error(err);
   }
@@ -49,7 +49,7 @@ export const setDarkMode = () => {
 // };
 
 export const getThemeValues = (theme, colorness) => {
-  if (theme === "light") {
+  if (theme === LIGHT) {
     return `bg-black text-gray-${colorness} `;
   } else {
     return `bg-white text-gray-${colorness} `;
