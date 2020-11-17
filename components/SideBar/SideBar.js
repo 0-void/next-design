@@ -3,7 +3,9 @@ import useTheme from "../../lib/Hooks/useTheme";
 import Moon from "../Icons/Icon/moon";
 import Sun from "../Icons/Icon/sun";
 import SearchBar from "../SearchBar/SearchBar";
-import { DARK, LIGHT } from "../../service/constants/index";
+import { LIGHT } from "../../service/constants/index";
+
+import DesignList from "../DesignList/DesignList";
 
 const SideBar = () => {
   const { cssProperties, toggleTheme, theme } = useTheme();
@@ -33,6 +35,7 @@ const SideBar = () => {
       </div>
       <div className="my-lg">
         <SearchBar />
+        <DesignList />
       </div>
       <style jsx>{`
         .sidebarContainer {
