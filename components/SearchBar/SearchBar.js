@@ -1,4 +1,5 @@
 import useTheme from "../../lib/Hooks/useTheme";
+import { DARK } from "../../service/constants/index";
 
 const SearchBar = () => {
   const { cssProperties, theme } = useTheme();
@@ -6,7 +7,9 @@ const SearchBar = () => {
 
   return (
     <div
-      className={`container ${styles.background} lightBorder"
+      className={`container ${styles.background} ${
+        theme === DARK && "lightBorder"
+      }
       }`}
     >
       <span className="px-3 search">
