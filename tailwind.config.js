@@ -20,6 +20,9 @@ module.exports = {
         lg: "24px",
       },
     },
+    maxWidth: {
+      inter: "840px",
+    },
   },
   variants: {},
   plugins: [],
